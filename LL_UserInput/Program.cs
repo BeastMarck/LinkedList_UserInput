@@ -1,10 +1,11 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
-using System.CodeDom;
+using System.Threading.Tasks;
 
 namespace LL_UserInput
 {
@@ -18,7 +19,7 @@ namespace LL_UserInput
             //LinkedList Declaration
             LinkedList<string> name = new LinkedList<string>();
 
-        Lemon:
+            CheckPoint:
             Console.Clear();
             //Input Total number of nodes
             Console.ForegroundColor = ConsoleColor.White;
@@ -37,7 +38,7 @@ namespace LL_UserInput
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Please enter a number");
                 Thread.Sleep(1000);
-                goto Lemon;
+                goto CheckPoint;
             }
 
             //For Limiting the Total number of names
@@ -47,7 +48,7 @@ namespace LL_UserInput
                 Console.WriteLine("Please enter numbers from 5-10");
                 //Using Thread.Sleep for display delay
                 Thread.Sleep(1000);
-                goto Lemon;
+                goto CheckPoint;
             }
 
             //For Name Input
@@ -96,9 +97,22 @@ namespace LL_UserInput
             Console.ForegroundColor= ConsoleColor.Green;
             Console.WriteLine("-----Inputed Names-----");
             Console.ForegroundColor = ConsoleColor.White;
+            int index = 1;
             foreach (string value in name)
             {
-                Console.WriteLine(value);
+                string suffix;
+
+                if (index == 1)
+                    suffix = "st";
+                else if (index == 2)
+                    suffix = "nd";
+                else if (index == 3)
+                    suffix = "rd";
+                else
+                    suffix = "th";
+
+                Console.WriteLine($"{index}{suffix}: {value}");
+                index++;
             }
 
             Console.ReadLine();
