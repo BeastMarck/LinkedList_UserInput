@@ -12,22 +12,34 @@ namespace LL_UserInput
     {
         static void Main(string[] args)
         {
-
             //John Jenson tacal
             //IT402P
 
             //LinkedList Declaration
             LinkedList<string> name = new LinkedList<string>();
 
-
-        inputVal:
+        Lemon:
             Console.Clear();
             //Input Total number of nodes
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("You may input Student first names from 5 to 10");
             Console.Write("How many names would you like to input: ");
-            int TotalNames = Convert.ToInt32(Console.ReadLine());
-            
+            int TotalNames;
+            string NumNumn = Console.ReadLine();
+
+            //Limiting input to int datatype
+            if (int.TryParse(NumNumn, out TotalNames)) 
+            { 
+
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Please enter a number");
+                Thread.Sleep(1000);
+                goto Lemon;
+            }
+
             //For Limiting the Total number of names
             if (TotalNames < 5 || TotalNames > 10)
             {
@@ -35,7 +47,7 @@ namespace LL_UserInput
                 Console.WriteLine("Please enter numbers from 5-10");
                 //Using Thread.Sleep for display delay
                 Thread.Sleep(1000);
-                goto inputVal;
+                goto Lemon;
             }
 
             //For Name Input
