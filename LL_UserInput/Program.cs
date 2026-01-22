@@ -24,7 +24,7 @@ namespace LL_UserInput
             Console.Clear();
             //Input Total number of nodes
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Youmay input Student first names from 5 to 10");
+            Console.WriteLine("You may input Student first names from 5 to 10");
             Console.Write("How many names would you like to input: ");
             int TotalNames = Convert.ToInt32(Console.ReadLine());
             
@@ -40,7 +40,7 @@ namespace LL_UserInput
 
             //For Name Input
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\nEnter 5 names of your classmates");
+            Console.WriteLine($"\nEnter {TotalNames} names of your classmates");
             Console.ForegroundColor = ConsoleColor.White;
             for(int i = 0; i < TotalNames; i++)
             {
