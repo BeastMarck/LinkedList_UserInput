@@ -102,13 +102,21 @@ namespace LL_UserInput
                 string suffix;
 
                 if (index == 1)
+                {
                     suffix = "st";
+                }
                 else if (index == 2)
+                {
                     suffix = "nd";
+                }
                 else if (index == 3)
+                {
                     suffix = "rd";
+                }
                 else
+                {
                     suffix = "th";
+                }
 
                 Console.WriteLine($"{index}{suffix}: {value}");
                 index++;
