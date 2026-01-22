@@ -25,11 +25,10 @@ namespace LL_UserInput
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("You may input Student first names from 5 to 10");
             Console.Write("How many names would you like to input: ");
-            int TotalNames;
-            string NumNumn = Console.ReadLine();
+            string StringNum = Console.ReadLine();
 
             //Limiting input to int datatype
-            if (int.TryParse(NumNumn, out TotalNames)) 
+            if (int.TryParse(StringNum, out int TotalNames)) 
             { 
 
             }
